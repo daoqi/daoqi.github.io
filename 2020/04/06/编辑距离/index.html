@@ -6,20 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>分发饼干 | 甯宓的博客</title>
+  <title>编辑距离 | 甯宓的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="article">
-<meta property="og:title" content="分发饼干">
-<meta property="og:url" content="http://yoursite.com/2020/02/13/%E5%88%86%E5%8F%91%E9%A5%BC%E5%B9%B2/index.html">
+<meta property="og:title" content="编辑距离">
+<meta property="og:url" content="http://yoursite.com/2020/04/06/%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB/index.html">
 <meta property="og:site_name" content="甯宓的博客">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-02-13T07:40:26.000Z">
-<meta property="article:modified_time" content="2020-04-05T13:03:02.355Z">
+<meta property="og:image" content="https://images.gitee.com/uploads/images/2020/0406/171859_dd63b335_5550632.png">
+<meta property="og:image" content="https://images.gitee.com/uploads/images/2020/0406/180606_f42ceaaf_5550632.png">
+<meta property="article:published_time" content="2020-04-06T07:33:08.000Z">
+<meta property="article:modified_time" content="2020-04-06T10:15:55.631Z">
 <meta property="article:author" content="甯宓">
-<meta property="article:tag" content="算法">
-<meta property="article:tag" content="贪心算法">
-<meta property="article:tag" content="竞赛">
+<meta property="article:tag" content="动态规划">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://images.gitee.com/uploads/images/2020/0406/171859_dd63b335_5550632.png">
   
     <link rel="alternative" href="/atom.xml" title="甯宓的博客" type="application/atom+xml">
   
@@ -159,20 +160,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-分发饼干" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-编辑距离" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      分发饼干
+      编辑距离
     </h1>
   
 
         
-        <a href="/2020/02/13/%E5%88%86%E5%8F%91%E9%A5%BC%E5%B9%B2/" class="archive-article-date">
-  	<time datetime="2020-02-13T07:40:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-13</time>
+        <a href="/2020/04/06/%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB/" class="archive-article-date">
+  	<time datetime="2020-04-06T07:33:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-06</time>
 </a>
 
         <!-- 开始添加字数统计-->
@@ -182,7 +183,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">909字</span>
+        <span class="post-count">1,746字</span>
       </span>
     </span>
 
@@ -191,7 +192,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text">  阅读时长≈ </span>
-        <span class="post-count">4分</span>
+        <span class="post-count">7分</span>
       </span>
     </span>
 </div>
@@ -218,46 +219,93 @@
     <div class="article-entry" itemprop="articleBody">
       
         <meta name="referrer" content="no-referrer" />  
+
 <a id="more"></a>
 
-<h1 id="分发饼干"><a href="#分发饼干" class="headerlink" title="分发饼干"></a>分发饼干</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>假设你是一位很棒的家长，想要给你的孩子们一些小饼干。但是，每个孩子最多只能给一块饼干。对每个孩子 i ，都有一个胃口值 gi ，这是能让孩子们满足胃口的饼干的最小尺寸；并且每块饼干 j ，都有一个尺寸 sj 。如果 sj &gt;= gi ，我们可以将这个饼干 j 分配给孩子 i ，这个孩子会得到满足。你的目标是尽可能满足越多数量的孩子，并输出这个最大数值。</p>
-<p>注意：</p>
-<p>你可以假设胃口值为正。<br>一个小朋友最多只能拥有一块饼干。</p>
-<h2 id="测试用例"><a href="#测试用例" class="headerlink" title="测试用例"></a>测试用例</h2><p>示例 1:</p>
-<p>输入: [1,2,3], [1,1]</p>
-<p>输出: 1</p>
-<p>解释:<br>你有三个孩子和两块小饼干，3个孩子的胃口值分别是：1,2,3。<br>虽然你有两块小饼干，由于他们的尺寸都是1，你只能让胃口值是1的孩子满足。<br>所以你应该输出1。</p>
-<p>示例 2:</p>
-<p>输入: [1,2], [1,2,3]</p>
-<p>输出: 2</p>
-<p>解释:<br>你有两个孩子和三块小饼干，2个孩子的胃口值分别是1,2。<br>你拥有的饼干数量和尺寸都足以让所有孩子满足。<br>所以你应该输出2.</p>
-<p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/assign-cookies" target="_blank" rel="noopener">https://leetcode-cn.com/problems/assign-cookies</a><br>著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。</p>
-<h2 id="题目翻译"><a href="#题目翻译" class="headerlink" title="题目翻译"></a>题目翻译</h2><p>去掉题目中的废话，变成编程语言就是</p>
+<h1 id="编辑距离"><a href="#编辑距离" class="headerlink" title="编辑距离"></a>编辑距离</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给你两个单词 word1 和 word2，请你计算出将 word1 转换成 word2 所使用的最少操作数 。</p>
+<p>你可以对一个单词进行如下三种操作：</p>
+<pre><code>插入一个字符
+删除一个字符
+替换一个字符</code></pre><p>示例 1：</p>
+<p>输入：word1 = “horse”, word2 = “ros”<br>输出：3<br>解释：<br>horse -&gt; rorse (将 ‘h’ 替换为 ‘r’)<br>rorse -&gt; rose (删除 ‘r’)<br>rose -&gt; ros (删除 ‘e’)</p>
+<p>示例 2：</p>
+<p>输入：word1 = “intention”, word2 = “execution”<br>输出：5<br>解释：<br>intention -&gt; inention (删除 ‘t’)<br>inention -&gt; enention (将 ‘i’ 替换为 ‘e’)<br>enention -&gt; exention (将 ‘n’ 替换为 ‘x’)<br>exention -&gt; exection (将 ‘n’ 替换为 ‘c’)<br>exection -&gt; execution (插入 ‘u’)</p>
+<p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/edit-distance" target="_blank" rel="noopener">https://leetcode-cn.com/problems/edit-distance</a><br>著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。</p>
+<h2 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h2><blockquote>
+<p>已知条件:两个字符串数组，word1，word2</p>
 <blockquote>
-<p>已知条件：</p>
-<p>给你两个数组(向量),一个叫g(孩子)，另一个叫s(饼干)。<strong>【下文中的向量统称为数组】</strong></p>
+<p>目的:通过三种操作，使得word1和word2相等，且操作次数最少</p>
 <blockquote>
-<p>数据含义：</p>
-<p>g数组里是<strong>饼干的需求量</strong>，s数组里是<strong>饼干的供给量</strong>。【不考虑饼干可拆分的情况】</p>
-<blockquote>
-<p>目的：</p>
-<p>统计有多少个满足供需关系的孩子</p>
-</blockquote>
-<p>坑：未知数组是否有序</p>
+<p>突破口：着重理解三种操作的实际含义!!!</p>
 </blockquote>
 </blockquote>
-<h2 id="思路1"><a href="#思路1" class="headerlink" title="思路1"></a>思路1</h2><h5 id="通过饼干找小孩"><a href="#通过饼干找小孩" class="headerlink" title="通过饼干找小孩"></a>通过饼干找小孩</h5><ol>
-<li>将两个数组排序</li>
-<li>从第一块饼干开始，和所有的孩子进行比较</li>
-<li>若饼干供给量 &gt;= 孩子需求量,认为这块饼干被孩子吃了，总数【cnt】加一</li>
+</blockquote>
+<p><strong>插入一个字符</strong></p>
+<p>假设:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> word1 = <span class="string">"cat"</span>;</span><br><span class="line"><span class="built_in">string</span> word2 = <span class="string">"cate"</span>;</span><br></pre></td></tr></table></figure>
+
+<p>显而易见，在word1的“cat”后添加一个”e”,它们相同，编辑距离为1</p>
+<p><strong>删除一个字符</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> word1 = <span class="string">"cat"</span>;</span><br><span class="line"><span class="built_in">string</span> word2 = <span class="string">"cate"</span>;</span><br></pre></td></tr></table></figure>
+
+<p>两个字符串不变，现在，把word2的“cate”的“e”删掉，发现它们同样是相同的，编辑距离为1</p>
+<p>到此为止我们可以发现，在一个串中的<strong>插入</strong>操作，和另一个串的<strong>删除</strong>操作是等价的。无外乎就是长的变短，短的补起，是一码回事。</p>
+<p><strong>替换一个字符</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> word1 = <span class="string">"cat"</span>;</span><br><span class="line"><span class="built_in">string</span> word2 = <span class="string">"car"</span>;</span><br></pre></td></tr></table></figure>
+
+<p>解决了删除和插入的问题，现在来让我们看看替换，嗯，没啥可看的，替换就是替换，无论是t-&gt;r还是r-&gt;t都是替换，那就统一替换word1吧。</p>
+<p>至此，我们将原来的问题就可以换成另外一种表达方式。</p>
+<h2 id="问题转化"><a href="#问题转化" class="headerlink" title="问题转化"></a>问题转化</h2><blockquote>
+<p>已知:两个字符串word1,word2</p>
+<blockquote>
+<p>目的：找出最短操作数</p>
+</blockquote>
+</blockquote>
+<p>操作方式：</p>
+<blockquote>
+<ol>
+<li>在单词word1串末尾添加字母</li>
+<li>在单词word2串末尾添加字母</li>
+<li>替换单词word1中的某个字母</li>
 </ol>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">findContentChildren</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; g, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; s)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; g = &#123;<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>&#125;;</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; s = &#123;<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>&#125;;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; findContentChildren(g,s) &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">findContentChildren</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; g, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; s)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> cnt = <span class="number">0</span>,g_pos = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::iterator g_it = g.<span class="built_in">begin</span>();</span><br><span class="line">	sort(g.<span class="built_in">begin</span>(),g.<span class="built_in">end</span>());</span><br><span class="line">	sort(s.<span class="built_in">begin</span>(),s.<span class="built_in">end</span>());</span><br><span class="line">    <span class="keyword">for</span>(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::iterator s_it = s.<span class="built_in">begin</span>();s_it != s.<span class="built_in">end</span>();s_it++)</span><br><span class="line">    &#123;</span><br><span class="line">    	<span class="keyword">for</span>(g_it = g.<span class="built_in">begin</span>()+g_pos;g_it!=g.<span class="built_in">end</span>();g_it++)</span><br><span class="line">    	&#123;</span><br><span class="line">            <span class="comment">/*注意：每当一个人吃完，他就不应该再参加比较【应从下一个人开始】，这个就是g_pos的目的*/</span></span><br><span class="line">    		<span class="keyword">if</span>(*s_it &gt;= *g_it)</span><br><span class="line">    		&#123;</span><br><span class="line">    			cnt++;</span><br><span class="line">    			g_pos++;</span><br><span class="line">    			<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> cnt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>而且上述三种操作关系是等价的</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> word1 = <span class="string">"horse"</span>;</span><br><span class="line"><span class="built_in">string</span> word2 = <span class="string">"bors"</span>;</span><br></pre></td></tr></table></figure>
 
-<p>时间复杂度：O(n²)</p>
-<h2 id="思路-2"><a href="#思路-2" class="headerlink" title="思路 2"></a>思路 2</h2><h5 id="通过小孩找饼干【贪心算法】"><a href="#通过小孩找饼干【贪心算法】" class="headerlink" title="通过小孩找饼干【贪心算法】"></a>通过小孩找饼干【贪心算法】</h5><p>因为分配饼干这件事之间没有关联，所以每次只看需求量最小的孩子是否被满足即可。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">findContentChildren2</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; g, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; s)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; g = &#123;<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>&#125;;</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; s = &#123;<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>&#125;;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; findContentChildren2(g,s) &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">findContentChildren2</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; g, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; s)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::iterator g_it = g.<span class="built_in">begin</span>(),s_it = s.<span class="built_in">begin</span>();</span><br><span class="line">	sort(g.<span class="built_in">begin</span>(),g.<span class="built_in">end</span>());</span><br><span class="line">	sort(s.<span class="built_in">begin</span>(),s.<span class="built_in">end</span>());</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span>(g_it != g.<span class="built_in">end</span>() &amp;&amp; s_it != s.<span class="built_in">end</span>())</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(*g_it &lt;= *s_it)</span><br><span class="line">		&#123;</span><br><span class="line">			cnt++;</span><br><span class="line">			g_it++;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		s_it++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> cnt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>看，上述代码块中(以word2-&gt;word1为例)，无论是先把“b”替换成”h”再添加“e”,还是先添加再替换，这两种过程，最终都会得到同样的操作数<strong>2</strong>，所以我们认为这三种操作的权重是一样的，先后顺序无所谓。</p>
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>假设:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">string A &#x3D; &quot;horse&quot;;</span><br><span class="line">string B &#x3D; &quot;ros&quot;;</span><br></pre></td></tr></table></figure>
 
-<p>时间复杂度：O(n)</p>
+<p><strong>在单词A中插入一个字母</strong></p>
+<p>假设，我们已知，<strong>“horse”</strong>到<strong>“ro”</strong>的编辑距离为 a【把horse变成ro需要a次操作】 ,那么很容易得出<strong>“horse”</strong>到<strong>“ros”</strong>的编辑距离不会大于 a + 1,因为只需要在A的末尾添加一个<strong>“s”</strong>就能在 a + 1次操作后，使 <strong>horse</strong>和<strong>ros</strong>就能变成相同的单词。</p>
+<p><strong>在单词B中插入一个字母</strong></p>
+<p>已知<strong>“hors”</strong>到<strong>“ros”</strong>的编辑距离为 b ，那么<strong>“horse”</strong>到<strong>“ros”</strong>的编辑距离不会大于 b + 1，道理和之前相同。</p>
+<p><strong>修改A中的字母</strong></p>
+<p>已知<strong>“hors”</strong>到<strong>“ro”</strong>的编辑距离为 c ，那么同样的，<strong>“horse”</strong>到<strong>“ros”</strong>的编辑距离不会大于 c + 1【把e-&gt;s】</p>
+<p>至此我们可以知道，把“horse” 变成“ros”的编辑距离应该是：</p>
+<p>$$<br>min(a+1,b+1,c+1)<br>$$</p>
+<p>举个最简单的例子</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> word1 = <span class="string">""</span>;</span><br><span class="line"><span class="built_in">string</span> word2 = <span class="string">"a"</span>;</span><br></pre></td></tr></table></figure>
+
+<p>基于上面的理论，我们只需要在word1后添加“a”即可，操作数为 <strong>1</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> word1 = <span class="string">"ab"</span>;</span><br><span class="line"><span class="built_in">string</span> word2 = <span class="string">""</span>;</span><br></pre></td></tr></table></figure>
+
+<p>同理，操作数为 2</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> word1 = <span class="string">""</span>;</span><br><span class="line"><span class="built_in">string</span> word2 = <span class="string">"abcdefghijklmnopqrstuvwxyz"</span>;</span><br></pre></td></tr></table></figure>
+
+<p>不多说了，26个字母和空串的的编辑距离为 26</p>
+<p>虽说生搬硬套，形式主义不好，但是你品，你细品<br>$$<br>optimization = min(a+1,b+1,c+1)<br>$$<br>这玩意长得像不像状态转移方程，三种操作像不像决策，最终是不是在求一个最小值的最优解？</p>
+<p>整个过程是不是可以通过时空进行划分成阶段？</p>
+<p>没毛病了，都符合，这玩意就是动态规划，动态规划的数学相关概念我的博客里都有，感兴趣的小伙伴可以去看看，不感兴趣的我们接着向下看。</p>
+<p><a href="https://daoqi.github.io/2019/12/18/动态规划/" target="_blank" rel="noopener">动态规划</a></p>
+<p>我们假设，dp[i][j] ，i 代表字母A的前 i 个字母，j 代表字母B前 j 个字母</p>
+<p><img src="https://images.gitee.com/uploads/images/2020/0406/171859_dd63b335_5550632.png" alt=""></p>
+<p>所以，当A[i-1] = B[j-1]时:<br>$$<br>dp[i][j] = min(dp[i][j-1]+1,dp[i-1][j]+1,dp[i-1][j-1])<br>$$<br>当A[i-1] != B[j-1]时:<br>$$<br>dp[i][j] = min(dp[i][j-1]+1,dp[i-1][j]+1,dp[i-1][j-1]+1)<br>$$</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">minDistance</span><span class="params">(<span class="built_in">string</span> word1, <span class="built_in">string</span> word2)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n = word1.length(),m = word2.length();</span><br><span class="line">	</span><br><span class="line">	<span class="comment">/*如果两个字符串中有一个为空，那么编辑距离就是长度非零的那个*/</span></span><br><span class="line">	<span class="keyword">if</span>(n*m == <span class="number">0</span>) <span class="keyword">return</span> n+m;</span><br><span class="line">	<span class="comment">/*Dp数组,i代表word1前i个字符，j代表word2前j个字符*/</span></span><br><span class="line">	<span class="keyword">int</span> dp[n+<span class="number">1</span>][m+<span class="number">1</span>]; </span><br><span class="line">	</span><br><span class="line">	<span class="comment">/*初始化Dp数组边界,把其中一个看做空串，推导出操作数*/</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;n+<span class="number">1</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		dp[i][<span class="number">0</span>] = i;	</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>;j&lt;m+<span class="number">1</span>;j++)</span><br><span class="line">	&#123;</span><br><span class="line">		dp[<span class="number">0</span>][j] = j;	</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">/*开始Dp,状态转移方程有两个</span></span><br><span class="line"><span class="comment">		当word1[i-1] = word2[j-1]时：</span></span><br><span class="line"><span class="comment">		dp[i][j] = min(dp[i][j-1]+1,dp[i-1][j]+1,dp[i-1][j-1]+1)</span></span><br><span class="line"><span class="comment">		当word1[i-1] != word2[j-1]时:</span></span><br><span class="line"><span class="comment">		dp[i][j] = min(dp[i][j-1]+1,dp[i-1][j]+1,dp[i-1][j-1])</span></span><br><span class="line"><span class="comment">	*/</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i&lt;n+<span class="number">1</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>;j&lt;m+<span class="number">1</span>;j++ )</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">int</span> left = dp[i<span class="number">-1</span>][j]+<span class="number">1</span>;</span><br><span class="line">			<span class="keyword">int</span> down = dp[i][j<span class="number">-1</span>]+<span class="number">1</span>;</span><br><span class="line">			<span class="keyword">int</span> left_down = dp[i<span class="number">-1</span>][j<span class="number">-1</span>];</span><br><span class="line">			<span class="keyword">if</span>(word1[i<span class="number">-1</span>] != word2[j<span class="number">-1</span>]) left_down++;</span><br><span class="line">			dp[i][j] = <span class="built_in">min</span>(left,<span class="built_in">min</span>(down,left_down));	</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> dp[n][m];</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; minDistance(<span class="string">"horse"</span>, <span class="string">"ros"</span>) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果注释看不懂，下面我还精心给你准备了一张图：</p>
+<p><img src="https://images.gitee.com/uploads/images/2020/0406/180606_f42ceaaf_5550632.png" alt=""></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>动态规划不好想，这道题刷个7，8遍都不足为过，有时不要拘泥于什么思想，说实话，这题我的第一想法是把两个字符串排字典序用贪心玩缺啥补啥，要啥改啥的套路，操作一次就加一，然后你把这例子往纸上一画，就发现自己想的太天真了【采用局部最优最后肯定大于正确答案，毕竟贪心和动态规划天生不对路子】。接着我就想暴力枚举出所有的操作结果，最后找一个次数最小的，但是这也就想想，不现实。一切都要以题目为实际出发，功夫下够了，自然就会了。不要生搬硬套数学概念，概念是从实际抽象总结出来的，只有从实际出发，才能看懂数学语言所描述的动态规划。</p>
 
       
 
@@ -273,7 +321,7 @@
           
           <br>
           <strong>本文链接：</strong>
-          http://yoursite.com/2020/02/13/%E5%88%86%E5%8F%91%E9%A5%BC%E5%B9%B2/
+          http://yoursite.com/2020/04/06/%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB/
           <br>
           <strong>版权声明：</strong>
           本作品采用
@@ -324,15 +372,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">贪心算法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">竞赛</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">动态规划</a>
         		</li>
       		
 		</ul>
@@ -399,7 +439,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/02/13/%E5%88%86%E5%8F%91%E9%A5%BC%E5%B9%B2/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/04/06/%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -413,18 +453,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/02/18/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          软件测试
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/02/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">计算机网络-自顶向下</div>
+    <a href="/2020/04/05/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数据挖掘</div>
       <i class="icon-circle-right"></i>
     </a>
   
