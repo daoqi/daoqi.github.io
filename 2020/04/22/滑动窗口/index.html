@@ -8,17 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>滑动窗口 | 甯宓的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="甯宓的博客">
-<meta property="og:type" content="article">
+  <meta property="og:type" content="article">
 <meta property="og:title" content="滑动窗口">
 <meta property="og:url" content="http://yoursite.com/2020/04/22/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/index.html">
 <meta property="og:site_name" content="甯宓的博客">
-<meta property="og:description" content="甯宓的博客">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pic1.zhimg.com/50/v2-88b10c0bfe1fcffd2f97eb778c795f72_hd.jpg">
 <meta property="article:published_time" content="2020-04-22T07:10:58.000Z">
-<meta property="article:modified_time" content="2020-04-22T07:10:58.488Z">
+<meta property="article:modified_time" content="2020-04-26T00:04:48.333Z">
 <meta property="article:author" content="甯宓">
+<meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic1.zhimg.com/50/v2-88b10c0bfe1fcffd2f97eb778c795f72_hd.jpg">
   
     <link rel="alternative" href="/atom.xml" title="甯宓的博客" type="application/atom+xml">
   
@@ -181,7 +182,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">0字</span>
+        <span class="post-count">543字</span>
       </span>
     </span>
 
@@ -190,7 +191,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text">  阅读时长≈ </span>
-        <span class="post-count">1分</span>
+        <span class="post-count">3分</span>
       </span>
     </span>
 </div>
@@ -216,7 +217,32 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <meta name="referrer" content="no-referrer" />  
+
+<a id="more"></a>
+
+<h1 id="滑动窗口"><a href="#滑动窗口" class="headerlink" title="滑动窗口"></a>滑动窗口</h1><p>什么是滑动窗口算法？我们举个最简单的例子。</p>
+<p>给定一个长度为 n  的数组  arr ，让你求其中 k 个数加和的最大值。</p>
+<p>假如这个数组长这样：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> arr [] = &#123;<span class="number">100</span>,<span class="number">200</span>,<span class="number">300</span>,<span class="number">400</span>,<span class="number">600</span>,<span class="number">400</span>,<span class="number">800</span>&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>让你求 3 个数加和的最大值。你可能会想到：</p>
+<p>经典的暴力破解法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo1</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="keyword">int</span> arr [] = &#123;<span class="number">100</span>,<span class="number">200</span>,<span class="number">300</span>,<span class="number">400</span>,<span class="number">600</span>,<span class="number">400</span>,<span class="number">800</span>&#125;;</span><br><span class="line">		System.out.println(subMax(arr,<span class="number">3</span>));</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">subMax</span><span class="params">(<span class="keyword">int</span> arr[],<span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> ans = -<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;arr.length-k+<span class="number">1</span>;i++) &#123;</span><br><span class="line">			<span class="keyword">int</span> curSum = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>;j&lt;k;j++) &#123;</span><br><span class="line">				curSum += arr[i+j];</span><br><span class="line">			&#125;</span><br><span class="line">			ans = Math.max(ans, curSum);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> ans;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>时间复杂度：O(n²)</p>
+<p>排序取巧法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo1</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="keyword">int</span> arr [] = &#123;<span class="number">100</span>,<span class="number">200</span>,<span class="number">300</span>,<span class="number">400</span>,<span class="number">600</span>,<span class="number">400</span>,<span class="number">800</span>&#125;;</span><br><span class="line">		System.out.println(subMax2(arr,<span class="number">3</span>));</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">subMax2</span><span class="params">(<span class="keyword">int</span> arr[],<span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">		Arrays.sort(arr);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = arr.length-<span class="number">1</span>;i&gt;=arr.length-k;i--) &#123; </span><br><span class="line">			ans += arr[i];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> ans;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>时间复杂度：O(n+m)</p>
+<p>现在，让我们换一种思路，假设 k 为 2，我们把长度为 2 的子数组看成一个窗口</p>
+<p><img src="https://pic1.zhimg.com/50/v2-88b10c0bfe1fcffd2f97eb778c795f72_hd.jpg" alt=""></p>
+<p>如上图所示，我们可以分出 3 个<strong>窗口</strong>，现在我们要做的就是观察每个窗口中的和，通过一次遍历我们就能得出数组 k个数字加和的最大值。</p>
+<p>第二个窗口 = 第一个窗口值 - 移出窗口的值</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo1</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="keyword">int</span> arr [] = &#123;<span class="number">100</span>,<span class="number">200</span>,<span class="number">300</span>,<span class="number">400</span>,<span class="number">600</span>,<span class="number">400</span>,<span class="number">800</span>&#125;;</span><br><span class="line">		System.out.println(subMax3(arr,<span class="number">3</span>));	</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">subMax3</span><span class="params">(<span class="keyword">int</span> arr[],<span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(arr.length&lt;<span class="number">0</span>) <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">int</span> maxSum = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;k;i++) &#123;</span><br><span class="line">			<span class="comment">//第一个窗口的值</span></span><br><span class="line">			maxSum+=arr[i];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">int</span> sum = maxSum;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = k;i&lt;arr.length;i++) &#123;</span><br><span class="line">			<span class="comment">//新窗口的值 = 第一个窗口的和 + 新进窗口的值 - 移出窗口的值</span></span><br><span class="line">			sum += (arr[i]-arr[i-k]);</span><br><span class="line">			maxSum = Math.max(maxSum,sum);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> maxSum;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>时间复杂度：O(n)</p>
+
       
 
 
@@ -238,7 +264,7 @@
     2020-04-22
     <br>
     <strong class="update-time">最后更新：</strong>
-    2020-04-22
+    2020-04-26
     <br>
     <strong class="article-titles">本文标题：</strong>
     <a href="http://yoursite.com/2020/04/22/滑动窗口/" title="滑动窗口" target="_blank">滑动窗口</a>
@@ -294,7 +320,29 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/算法//" class="article-tag-list-link color3">算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -563,15 +611,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">排序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">操作系统</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -580,6 +620,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">广度优先</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">排序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">操作系统</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -599,7 +647,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
+                <a href="javascript:void(0)" class="js-tag color4">顺序表</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -607,11 +655,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">顺序表</a>
+                <a href="javascript:void(0)" class="js-tag color3">日语</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">日语</a>
+                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -620,10 +672,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">大数运算</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
               </li>
             
             <div class="clearfix"></div>

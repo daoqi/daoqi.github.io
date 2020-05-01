@@ -27,8 +27,12 @@
 <meta property="og:image" content="https://images.gitee.com/uploads/images/2020/0325/184738_624b9416_5550632.png">
 <meta property="og:image" content="https://images.gitee.com/uploads/images/2020/0330/202614_3eb6b43e_5550632.png">
 <meta property="og:image" content="https://images.gitee.com/uploads/images/2020/0413/194830_d2adc08e_5550632.png">
+<meta property="og:image" content="https://images.gitee.com/uploads/images/2020/0425/175323_a5df323f_5550632.png">
+<meta property="og:image" content="https://images.gitee.com/uploads/images/2020/0425/175244_f95beee8_5550632.png">
 <meta property="og:image" content="https://images.gitee.com/uploads/images/2020/0115/200711_4def567d_5550632.png">
 <meta property="og:image" content="https://images.gitee.com/uploads/images/2020/0115/203007_2a25c2c2_5550632.png">
+<meta property="og:image" content="https://images.gitee.com/uploads/images/2020/0425/180016_3fed0469_5550632.png">
+<meta property="og:image" content="https://images.gitee.com/uploads/images/2020/0425/191427_57e9839e_5550632.png">
 <meta property="og:image" content="https://images.gitee.com/uploads/images/2020/0115/214958_8f3136c8_5550632.png">
 <meta property="og:image" content="https://images.gitee.com/uploads/images/2020/0116/125349_fecdad70_5550632.png">
 <meta property="og:image" content="https://images.gitee.com/uploads/images/2020/0116/133118_8ecf59c2_5550632.png">
@@ -42,7 +46,7 @@
 <meta property="og:image" content="https://images.gitee.com/uploads/images/2020/0120/192558_09df559b_5550632.png">
 <meta property="og:image" content="https://images.gitee.com/uploads/images/2020/0120/193954_2925aaf8_5550632.png">
 <meta property="article:published_time" content="2020-01-14T10:15:37.000Z">
-<meta property="article:modified_time" content="2020-04-20T10:58:36.810Z">
+<meta property="article:modified_time" content="2020-04-25T11:56:29.917Z">
 <meta property="article:author" content="甯宓">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
@@ -209,7 +213,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">13,518字</span>
+        <span class="post-count">14,106字</span>
       </span>
     </span>
 
@@ -218,7 +222,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text">  阅读时长≈ </span>
-        <span class="post-count">59分</span>
+        <span class="post-count">61分</span>
       </span>
     </span>
 </div>
@@ -671,31 +675,63 @@
 <p>例如：public，default 关键字就是合理暴露，使外部程序能直接访问属性或方法</p>
 <h5 id="小总结"><a href="#小总结" class="headerlink" title="小总结"></a>小总结</h5><p><img src="https://images.gitee.com/uploads/images/2020/0413/194830_d2adc08e_5550632.png" alt=""></p>
 <p>第一层的封装就是通过<strong>private</strong>进行封装，第二层的封装，就是通过<strong>空缺</strong>，<strong>protected</strong>，在包的级别上进行封装。</p>
-<h4 id="3-5-继承、接口和抽象类"><a href="#3-5-继承、接口和抽象类" class="headerlink" title="3.5 继承、接口和抽象类"></a>3.5 继承、接口和抽象类</h4><p>面向对象的一大优点就是继承，不仅可以减少代码冗余，同时也可以减少代码更新时所产生的成本。那什么是继承呢？自然语言描述的话就是:<strong>子承父业，父亲的一切都会继承给儿子</strong>。</p>
+<h4 id="3-5-继承、接口和抽象类"><a href="#3-5-继承、接口和抽象类" class="headerlink" title="3.5 继承、接口和抽象类"></a>3.5 继承、接口和抽象类</h4><p>客观世界中，同类的事物既有<strong>共性</strong>又有<strong>特性</strong>，比如，学生和老师都是人，他们都有年龄，姓名，所属学校，但是学生的特性是学号，行为是考试，而老师的特性是工号，行为为批改试卷。</p>
+<p>面向对象的一大优点就是继承特性，不仅可以减少代码冗余，同时也可以减少代码更新时所产生的成本。那什么是继承呢？自然语言描述的话就是:<strong>子承父业，父亲的一切都会继承给儿子</strong>。</p>
+<blockquote>
+<p>1) 子类继承父类成员变量</p>
+<p>2)  子类从父类继承方法，使子类具有父类相同的行为</p>
+</blockquote>
+<p>继承需要符合“一般-&gt;特殊”的关系，<strong>is-a</strong>，父类更通用。比如说公交车是交通工具，但不能反过来说。</p>
+<p>类 B (具体类/特殊类) 继承了类 A (一般类)，我们称 类A 为<strong>父类(超类，基类)</strong>，类 B 为<strong>子类（派生类）</strong>。</p>
+<p>下面让我们看一个例子：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Man</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> height,weight;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">hunt</span><span class="params">()</span><span class="comment">//打猎</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Woman</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> height,weight;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">cook</span><span class="params">()</span><span class="comment">//做饭</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>上面的两个类，无论男性还是女性都有共同的特征和行为，即身高，体重和吃饭。我们将其抽象成人类。<strong>从很多类别中提取共同点就形成了父类，而子类只要继承它，就会有父类的特点(非private成员)</strong>，继承关系就像是族谱，可以通过画出继承树的方式理清关系。</p>
+<p><img src="https://images.gitee.com/uploads/images/2020/0425/175323_a5df323f_5550632.png" alt=""></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Human</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">   <span class="keyword">double</span> height,weight;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Man</span> <span class="keyword">extends</span> <span class="title">Human</span>//继承语法</span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">hunt</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Woman</span> <span class="keyword">extends</span> <span class="title">Human</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">cook</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>子类和父类要是有重复的属性和方法，优先使用子类的(本身的)。</p>
-<p><strong>单根继承原则:和c++不同，Java中的类只能继承一个类</strong>。</p>
-<p>哪怕不写 extends Java类也会默认继承java.lang.Object类。</p>
-<p>通过super()调用父类构造函数。</p>
-<p>再看构造函数</p>
-<ol>
-<li>每个类必须有构造函数(没有的话自动添加)</li>
-<li>构造函数可以重构</li>
-<li>super是指向父类的引用，在继承时，如果构造方法没有显示地调用父类的构造方法，那么编译器会自动为它加上一个默认的无参的super()方法调用。构造函数内只能有一句super()语句。</li>
+<p>继承语法：</p>
+<blockquote>
+<p>【修饰符】class 子类名 <strong>extends</strong> 父类名</p>
+</blockquote>
+<h5 id="继承的注意事项"><a href="#继承的注意事项" class="headerlink" title="继承的注意事项"></a>继承的注意事项</h5><ol>
+<li><p>子类和父类要是有重复的属性和方法，优先使用子类的(本身的)。</p>
+</li>
+<li><p><strong>单根继承原则: 和c++，Python不同，Java中的类只能继承一个类</strong>。<strong>哪怕不写 extends Java类也会默认继承java.lang.Object类</strong>。</p>
+</li>
+<li><p>子类在继承父类时，私有成员属于<strong>隐式继承（不能在子类中直接访问）</strong>。</p>
+</li>
 </ol>
+<p><img src="https://images.gitee.com/uploads/images/2020/0425/175244_f95beee8_5550632.png" alt=""></p>
+<ol start="4">
+<li><p>调用子类构造方法一定调用父类的构造方法（默认无参构造方法），以确保父类对象先实例化，再实例化子类对象，<strong>先有祖先，再有子孙</strong>。</p>
+</li>
+<li><p>子类继承了父类的所有方法，但子类可以重新定义一个<strong>名称，参数相同</strong>都和父类一样的方法，这种行为叫做<strong>重写/覆盖(overwrite/overide)</strong>。<strong>子类方法的优先级大于父类</strong>。而且方法重写时，<strong>子类中方法的访问权限不能小于父类的访问权限</strong>。</p>
+</li>
+</ol>
+<h5 id="super-关键字"><a href="#super-关键字" class="headerlink" title="super 关键字"></a>super 关键字</h5><p>super关键字的作用：</p>
+<blockquote>
+<ol>
+<li>使用父类中被覆盖的成员变量</li>
+<li>调用fu类中被重写的成员方法</li>
+<li><strong>调用父类的构造方法</strong></li>
+</ol>
+</blockquote>
+<p>如果子类构造方法没有显示地调用父类的构造方法，那么编译器会自动为它加上一个<strong>默认的无参的super()方法调用</strong>。构造函数内只能有一句super()语句且必须在第一句的位置上。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">B</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">B</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"我是B类的无参构造函数!"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">B</span><span class="params">(<span class="keyword">int</span> num)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"我是B类的有参构造函数!参数为 "</span> + num);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">A</span> <span class="keyword">extends</span> <span class="title">B</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">A</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"我是A类的无参构造函数!"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">A</span><span class="params">(<span class="keyword">int</span> num)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"我是A类的有参构造函数!参数为 "</span> + num);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		A a = <span class="keyword">new</span> A();</span><br><span class="line">		System.out.println(<span class="string">"===================="</span>);</span><br><span class="line">		A b = <span class="keyword">new</span> A(<span class="number">10</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://images.gitee.com/uploads/images/2020/0115/200711_4def567d_5550632.png" alt=""></p>
 <p>在分割线之上，我们new了一个A类的对象，由于A继承了B，所以先执行了父类B的无参构造函数super()【编译器默认生成的】，所以是这样的效果。然而，在对A进行有参实例化时，由于我们没写super()方法，编译器依旧默认使用无参构造函数，很有可能出错导致会出现分割线之下的情况。</p>
 <p><img src="https://images.gitee.com/uploads/images/2020/0115/203007_2a25c2c2_5550632.png" alt=""></p>
+<p><img src="https://images.gitee.com/uploads/images/2020/0425/180016_3fed0469_5550632.png" alt=""></p>
 <p>PS:一定要想好子类使用父类的哪个构造方法。</p>
 <p>规范写法如下:</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">B</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">B</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"我是B类的无参构造函数!"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">B</span><span class="params">(<span class="keyword">int</span> num)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"我是B类的有参构造函数!参数为 "</span> + num);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">A</span> <span class="keyword">extends</span> <span class="title">B</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">A</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">super</span>();</span><br><span class="line">		System.out.println(<span class="string">"我是A类的无参构造函数!"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">A</span><span class="params">(<span class="keyword">int</span> num)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">super</span>(num);<span class="comment">//使用父类的有参构造函数</span></span><br><span class="line">		System.out.println(<span class="string">"我是A类的有参构造函数!参数为 "</span> + num);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		A a = <span class="keyword">new</span> A();</span><br><span class="line">		System.out.println(<span class="string">"===================="</span>);</span><br><span class="line">		A b = <span class="keyword">new</span> A(<span class="number">10</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<p>我们再看一个例子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> secondpackage;</span><br><span class="line"><span class="comment">//父类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">	<span class="keyword">private</span> String name;</span><br><span class="line">	<span class="keyword">public</span> String address = <span class="string">"霍格沃兹"</span>;</span><br><span class="line">	Person()&#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	Person(String name,<span class="keyword">int</span> age)&#123;</span><br><span class="line">		<span class="keyword">this</span>.name = name;</span><br><span class="line">		<span class="keyword">this</span>.age = age;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> age;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.age = age;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> name;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.name = name;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getInfo</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">"name: "</span>+<span class="keyword">this</span>.name +<span class="string">" "</span>+<span class="string">",age: "</span> + <span class="keyword">this</span>.age;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//子类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> <span class="keyword">extends</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">private</span> String className;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">(String name,<span class="keyword">int</span> age,String className)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">super</span>(name,age);<span class="comment">//调用父类的构造方法</span></span><br><span class="line">		<span class="keyword">this</span>.className = className;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getClassName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> className;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setClassName</span><span class="params">(String className)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.className = className;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getStudent</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>.getInfo() + <span class="string">",班级： "</span> + <span class="keyword">this</span>.className;<span class="comment">//由于继承父类中有getInfo方法</span></span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//主类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String argv[])</span> </span>&#123;</span><br><span class="line">		Student stu = <span class="keyword">new</span> Student(<span class="string">"阿斯蒂芬"</span>,<span class="number">18</span>,<span class="string">"国学"</span>);</span><br><span class="line">		System.out.println(stu.getStudent());</span><br><span class="line">		System.out.println(stu.address);<span class="comment">//父类的公共成员变量可以被子类对象访问</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://images.gitee.com/uploads/images/2020/0425/191427_57e9839e_5550632.png" alt=""></p>
 <h5 id="抽象类和接口"><a href="#抽象类和接口" class="headerlink" title="抽象类和接口"></a>抽象类和接口</h5><p>类里面有属性和方法，一个正常的类中方法都是已经实现的，类可以没有方法，但是一旦拥有方法就应该实现，那些<strong>有方法却没有具体实现的类就要定义成抽象类</strong>。用<strong>关键字abstract</strong>声明</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Shape</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="comment">/*这是一个图形类，然而图形未知*/</span></span><br><span class="line">    <span class="keyword">double</span> area;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">calculateArea</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="comment">/*这个方法想计算面积，显然，未知图形无法使用公式进行计算，无法写出具体实现*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -729,7 +765,6 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> test3;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Man</span> <span class="keyword">extends</span> <span class="title">Human</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		Human m1 = <span class="keyword">new</span> Man();<span class="comment">//当对象本身就是来源子类时</span></span><br><span class="line">		Man m2 = (Man) m1;<span class="comment">//可以将父类转成子类</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h5 id="3-6-2-多态"><a href="#3-6-2-多态" class="headerlink" title="3.6.2 多态"></a>3.6.2 多态</h5><p>类型转换，带来的结果就是多态。</p>
-<p>子类继承了父类的所有方法，但子类可以重新定义一个名称，参数相同和父类一样的方法，这种行为叫做<strong>重写/覆盖(overwrite/overide)</strong>。<strong>子类方法的优先级大于父类</strong>。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> test3;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Human</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"I can eat"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Man</span> <span class="keyword">extends</span> <span class="title">Human</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">hunt</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"I can hunt"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span><span class="comment">//Man继承Human，Man类重写了Human中的eat()方法</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"I can eat more!"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		Man obj1 = <span class="keyword">new</span> Man();<span class="comment">//实例化Man对象obj1</span></span><br><span class="line">		obj1.eat();</span><br><span class="line">		Human obj2 = (Human) obj1;<span class="comment">//转型为Human</span></span><br><span class="line">		obj2.eat();</span><br><span class="line">		Man obj3 = (Man) obj2;</span><br><span class="line">		obj3.eat();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://images.gitee.com/uploads/images/2020/0116/133118_8ecf59c2_5550632.png" alt=""></p>
@@ -751,7 +786,7 @@
 </ol>
 <p>PS:接口中的方法都是空的，但是实现(implements)接口的类必须实现接口中的所有方法，这就保证了在统一操作时，可以基于多态的特性，使用对象本身的方法。</p>
 <h3 id="Part-4-Java-关键字"><a href="#Part-4-Java-关键字" class="headerlink" title="Part 4 Java 关键字"></a>Part 4 Java 关键字</h3><h4 id="关键字-static"><a href="#关键字-static" class="headerlink" title="关键字 static"></a>关键字 static</h4><p>英文原意:静态的，不变的，恒定的</p>
-<p>存在的意义：方便在没有创建对象的情况下来进行调用</p>
+<p><strong>存在的意义：方便在没有创建对象的情况下来进行调用</strong></p>
 <p>应用场景:</p>
 <ol>
 <li>修饰变量</li>
@@ -1271,15 +1306,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">排序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">操作系统</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1288,6 +1315,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">广度优先</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">排序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">操作系统</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1307,7 +1342,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
+                <a href="javascript:void(0)" class="js-tag color4">顺序表</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1315,11 +1350,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">顺序表</a>
+                <a href="javascript:void(0)" class="js-tag color3">日语</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">日语</a>
+                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1328,10 +1367,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">大数运算</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
               </li>
             
             <div class="clearfix"></div>
