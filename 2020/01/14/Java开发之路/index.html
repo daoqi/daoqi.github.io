@@ -46,7 +46,7 @@
 <meta property="og:image" content="https://images.gitee.com/uploads/images/2020/0120/192558_09df559b_5550632.png">
 <meta property="og:image" content="https://images.gitee.com/uploads/images/2020/0120/193954_2925aaf8_5550632.png">
 <meta property="article:published_time" content="2020-01-14T10:15:37.000Z">
-<meta property="article:modified_time" content="2020-04-25T11:56:29.917Z">
+<meta property="article:modified_time" content="2020-05-04T11:56:24.904Z">
 <meta property="article:author" content="甯宓">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
@@ -213,7 +213,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">14,106字</span>
+        <span class="post-count">14,140字</span>
       </span>
     </span>
 
@@ -222,7 +222,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text">  阅读时长≈ </span>
-        <span class="post-count">61分</span>
+        <span class="post-count">62分</span>
       </span>
     </span>
 </div>
@@ -884,6 +884,7 @@
 
 
 <h4 id="关键字final"><a href="#关键字final" class="headerlink" title="关键字final"></a>关键字final</h4><p>英文原意：不可更改的，决定性的，最终的</p>
+<p>在 Java 中又称：<strong>完结器</strong>，感觉很像 C++ 的 <strong>const</strong>。</p>
 <p>应用场景：</p>
 <ol>
 <li>修饰类</li>
@@ -893,16 +894,21 @@
 <p>特性：</p>
 <p>*<em>1. final的类，不能被继承 *</em>。</p>
 <p><strong>2.父类中有final方法，子类不能重写【改写】此方法</strong>。</p>
-<p><strong>3.final的基本型变量【int,float】，不能再次赋值,若是对象实例，不能修改其指针（但是可以修改指针内部的值）</strong>。</p>
+<p><strong>3.final的基本型变量【int,float】，不能再次赋值,若是对象实例，不能修改其引用（但是可以修改引用内部的值）</strong>。</p>
 <p><img src="https://images.gitee.com/uploads/images/2020/0120/190316_3190e5f1_5550632.png" alt=""></p>
 <p>特性1，QED。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> test5;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FinalFather</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">final</span> <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">helloWorld</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"hello world from FinalFather class"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FinalTest</span> <span class="keyword">extends</span> <span class="title">FinalFather</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">helloWorld</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"hello world from FinalTest class"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FinalFather</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">final</span> <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">helloWorld</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"hello world from FinalFather class"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FinalTest</span> <span class="keyword">extends</span> <span class="title">FinalFather</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">helloWorld</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"hello world from FinalTest class"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://images.gitee.com/uploads/images/2020/0120/192558_09df559b_5550632.png" alt=""></p>
 <p>特性2，QED。</p>
 <p>特性3，图示：</p>
 <p><img src="https://images.gitee.com/uploads/images/2020/0120/193954_2925aaf8_5550632.png" alt=""></p>
-<p>指针固定了，但是指针里的值可以改变。</p>
+<p>引用固定了，但是引用里的值可以改变。</p>
+<p>final 修饰的静态变量，必须赋值且不可更改</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> <span class="keyword">static</span> <span class="keyword">int</span> MAX_NUM = <span class="number">100</span>;</span><br></pre></td></tr></table></figure>
+
+
+
 <h4 id="关键字package，import和classpath"><a href="#关键字package，import和classpath" class="headerlink" title="关键字package，import和classpath"></a>关键字package，import和classpath</h4><p>&emsp;之前的Java类都是放在同一目录下的，类之间的相互调用关系无需<strong>显式声明调用</strong>。</p>
 <p>当程序规模变大时，可能出现的情况：</p>
 <ol>
