@@ -49,7 +49,7 @@
 <meta property="og:image" content="https://images.gitee.com/uploads/images/2020/0501/145847_f587b103_5550632.png">
 <meta property="og:image" content="https://images.gitee.com/uploads/images/2020/0501/152010_ba33efd5_5550632.png">
 <meta property="article:published_time" content="2020-03-01T23:53:10.000Z">
-<meta property="article:modified_time" content="2020-05-01T07:20:40.087Z">
+<meta property="article:modified_time" content="2020-05-12T01:16:49.932Z">
 <meta property="article:author" content="甯宓">
 <meta property="article:tag" content="操作系统">
 <meta name="twitter:card" content="summary">
@@ -216,7 +216,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">10,702字</span>
+        <span class="post-count">11,012字</span>
       </span>
     </span>
 
@@ -225,7 +225,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text">  阅读时长≈ </span>
-        <span class="post-count">38分</span>
+        <span class="post-count">39分</span>
       </span>
     </span>
 </div>
@@ -787,13 +787,13 @@
 <li><p><strong>同时只能有一个生产者或消费者，添加或删除物品</strong></p>
 </li>
 </ol>
-<p>由此，我们可以明确的判断出，生产者和消费者之间是<strong>同步关系</strong>，而每个生产者之间或消费者之间为<strong>互斥关系</strong>，</p>
+<p>由此，我们可以明确的判断出，生产者和消费者之间是<strong>同步和互斥关系</strong>，而每个生产者之间或消费者之间为<strong>互斥关系</strong>，</p>
 <p>根据信号量理论，我们提出3个信号量。</p>
 <blockquote>
 <ol>
 <li>对于所有的生产者，我们设计<strong>私用信号量full</strong>，判断缓冲池是否已满，代表占用区，<strong>初值 0</strong></li>
 <li>对于所有消费者，我们设计<strong>私用信号量empty</strong>，判断缓冲池是否为空，代表空闲区，<strong>初值 N</strong></li>
-<li>对于生产者和消费者之间，我们设计<strong>公用信号量mutex</strong>，用于解决互斥问题，由于只有一个共用缓冲池，<strong>初值为 1</strong></li>
+<li>对于生产者和消费者之间，我们设计<strong>公用信号量mutex</strong>，用于解决<strong>同步和互斥</strong>问题，由于只有一个共用缓冲池，<strong>初值为 1</strong></li>
 </ol>
 </blockquote>
 <p>那么对于一个生产者进程就会有如下过程：</p>
@@ -824,6 +824,22 @@
 <p>对于同步问题，一旦 full ， empty，信号量的 value 值为 N 或 0，进程也会进入相应的等待队列，进程状态由执行态转换成阻塞态。</p>
 <p><img src="https://images.gitee.com/uploads/images/2020/0501/152010_ba33efd5_5550632.png" alt=""></p>
 <p><strong>读者-写者模型</strong></p>
+<p>问题描述：读者和写者共若干人，都可以向同一个存储区进行操作。</p>
+<p>写者执行写操作时,每次只允许一位写者进行写操作。读者执行读操作，可以多名读者同时进行读操作，读者读的时候写者不能写。</p>
+<p>也就是说：这个模型存在两种关系：</p>
+<p><strong>写者之间是互斥关系</strong></p>
+<p><strong>读者和写者之间是互斥的</strong></p>
+<p>设置<strong>wmutex信号量解决，写者之间和读者和写者之间的两个互斥问题</strong></p>
+<p>设置<strong>readcount临界变量用来计数读者的数量</strong></p>
+<p>设置<strong>rmutex用来保护rcount临界资源</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">semaphore wmutex = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">semaphore rmutex = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> readcount = <span class="number">0</span>;<span class="comment">// 记录有几个读者</span></span><br></pre></td></tr></table></figure>
+
+<p>对于读者Reader</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(<span class="literal">true</span>)</span><br><span class="line">&#123;</span><br><span class="line">	wait(rmutex);</span><br><span class="line">	<span class="keyword">if</span>(rumtex == <span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		wait(wmutex);<span class="comment">//第一个读者进来时，保证写者不能写</span></span><br><span class="line">	&#125;</span><br><span class="line">	readcount++;</span><br><span class="line">	signal(rmutex);<span class="comment">//readcount已经互斥访问完毕</span></span><br><span class="line">	<span class="comment">//临界区代码-读的过程</span></span><br><span class="line">	wait(rmutex);</span><br><span class="line">	readcount--;</span><br><span class="line">	<span class="keyword">if</span>(rmutex == <span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		signal(wmutex);<span class="comment">//保证最后一个读者读完</span></span><br><span class="line">	&#125;</span><br><span class="line">	signal(rmutex);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>对于写者Writer：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(<span class="literal">true</span>)</span><br><span class="line">&#123;</span><br><span class="line">	wait(wmutex);</span><br><span class="line">    <span class="comment">//临界区代码-写的过程</span></span><br><span class="line">    signal(wmutex);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -846,7 +862,7 @@
     2020-03-02
     <br>
     <strong class="update-time">最后更新：</strong>
-    2020-05-01
+    2020-05-12
     <br>
     <strong class="article-titles">本文标题：</strong>
     <a href="http://yoursite.com/2020/03/02/操作系统/" title="操作系统" target="_blank">操作系统</a>
@@ -1276,6 +1292,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">大数运算</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">回溯</a>
               </li>
             
             <div class="clearfix"></div>
