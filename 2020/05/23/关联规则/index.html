@@ -6,17 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: 算法 | 甯宓的博客</title>
+  <title>关联规则 | 甯宓的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="甯宓的博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="甯宓的博客">
-<meta property="og:url" content="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/index.html">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="关联规则">
+<meta property="og:url" content="http://yoursite.com/2020/05/23/%E5%85%B3%E8%81%94%E8%A7%84%E5%88%99/index.html">
 <meta property="og:site_name" content="甯宓的博客">
-<meta property="og:description" content="甯宓的博客">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://images.gitee.com/uploads/images/2020/0523/140241_f189ce54_5550632.png">
+<meta property="og:image" content="https://images.gitee.com/uploads/images/2020/0523/141652_b6f51f70_5550632.png">
+<meta property="og:image" content="https://images.gitee.com/uploads/images/2020/0523/142432_5eba8fa1_5550632.png">
+<meta property="og:image" content="https://images.gitee.com/uploads/images/2020/0523/144016_66834bc8_5550632.png">
+<meta property="og:image" content="https://images.gitee.com/uploads/images/2020/0523/144038_527ce836_5550632.png">
+<meta property="og:image" content="https://images.gitee.com/uploads/images/2020/0523/144113_1a9eeed8_5550632.png">
+<meta property="article:published_time" content="2020-05-23T03:08:21.000Z">
+<meta property="article:modified_time" content="2020-05-23T11:18:17.972Z">
 <meta property="article:author" content="甯宓">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="数据挖掘">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://images.gitee.com/uploads/images/2020/0523/140241_f189ce54_5550632.png">
   
     <link rel="alternative" href="/atom.xml" title="甯宓的博客" type="application/atom+xml">
   
@@ -156,36 +165,167 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-关联规则" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/23/%E5%85%B3%E8%81%94%E8%A7%84%E5%88%99/" class="archive-article-date">
-  	<time datetime="2020-05-23T03:08:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-23</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/23/%E5%85%B3%E8%81%94%E8%A7%84%E5%88%99/">关联规则</a>
+    <h1 class="article-title" itemprop="name">
+      关联规则
     </h1>
   
 
-        <div class="article-info info-on-right">
+        
+        <a href="/2020/05/23/%E5%85%B3%E8%81%94%E8%A7%84%E5%88%99/" class="archive-article-date">
+  	<time datetime="2020-05-23T03:08:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-23</time>
+</a>
+
+        <!-- 开始添加字数统计-->
+        
+          <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text">  字数统计: </span>
+        <span class="post-count">1,072字</span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text">  阅读时长≈ </span>
+        <span class="post-count">4分</span>
+      </span>
+    </span>
+</div>
+
           
+        <!-- 添加完成 -->
+
+        
+
+        
+          <span class="archive-article-date">
+              阅读量 <span id="busuanzi_value_page_pv"></span>
+          </span>
+        
+
+      </header>
+    
+
+    <!-- 目录内容 -->
+    
+    <!-- 目录内容结束 -->
+
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <meta name="referrer" content="no-referrer" />  
+
+<a id="more"></a>
+
+<h1 id="关联规则"><a href="#关联规则" class="headerlink" title="关联规则"></a>关联规则</h1><h2 id="Part-1-定义"><a href="#Part-1-定义" class="headerlink" title="Part 1 定义"></a>Part 1 定义</h2><p>​    关联分析又称关联挖掘，就是在交易数据、关系数据或其他信息载体中，查找存在于项目集合或对象集合之间的频繁模式、关联、相关性或因果结构。可从数据库中关联分析出形如“由于某些事件的发生而引起另外一些事件的发生”之类的规则。</p>
+<h2 id="Part-2-频繁项集，闭项集"><a href="#Part-2-频繁项集，闭项集" class="headerlink" title="Part 2 频繁项集，闭项集"></a>Part 2 频繁项集，闭项集</h2><p>首先，什么是“项 (item)”？我们以超市购物举例子，超市中的每个商品都是一项，我们假设项的集合集 I：<br>$$<br>I = {i_1,i_2,i_3,…,i_m}\<br>I = {香槟,啤酒,巧克力,薯片,…}<br>$$<br>其次，什么是事务数据库D？</p>
+<p>事物数据库中里存的是一系列具有<strong>唯一标识TID的事务（Transaction）</strong><br>$$<br>D = {t_1,t_2,t_3,…,t_n}\<br>t_i(i = 1,2,3,…,n) ∈ I<br>$$<br>举个具体的例子就是，事务是<strong>每个顾客的购物篮</strong>，或是具体场景下的<strong>选择记录</strong>。</p>
+<p><img src="https://images.gitee.com/uploads/images/2020/0523/140241_f189ce54_5550632.png" alt=""></p>
+<p>在这里，所有图书ID构成了一个<strong>项集</strong>，每位读者的借阅记录就是一个<strong>事务</strong>，<strong>TID为读者ID</strong>。</p>
+<p>知道这些之后，我们再引出一些概念，首先是<strong>k-项集 和 出现频度</strong>。</p>
+<h3 id="2-1-k-项集与出现频度"><a href="#2-1-k-项集与出现频度" class="headerlink" title="2.1 k-项集与出现频度"></a>2.1 k-项集与出现频度</h3><p>k-项集，就是项集中有 k 个Item 的集合，比如在上图有关图书借阅的例子中 1项集长这样：</p>
+<p><img src="https://images.gitee.com/uploads/images/2020/0523/141652_b6f51f70_5550632.png" alt=""></p>
+<p><img src="https://images.gitee.com/uploads/images/2020/0523/142432_5eba8fa1_5550632.png" alt=""></p>
+<p>2项集长这样，图中的频度成为<strong>绝对支持度<em>(support)</em></strong></p>
+<p>在关联规则思想下，我们要先找出<strong>频繁项集</strong>，怎么找频繁项集呢？这里就涉及到了<strong>最小支持度阈值</strong></p>
+<h2 id="2-2-最小支持度阈值"><a href="#2-2-最小支持度阈值" class="headerlink" title="2.2 最小支持度阈值"></a>2.2 最小支持度阈值</h2><p><strong>通常我们是根据实际经验来设置最小支持度阈值的</strong>，就本例而言，我将<strong>最小支持度阈值设为0.2</strong>，那我们找出来的频繁项集，就要过滤掉所有<strong>支持度 &lt; 0.2</strong>的项集。</p>
+<p><img src="https://images.gitee.com/uploads/images/2020/0523/144016_66834bc8_5550632.png" alt=""></p>
+<p><img src="https://images.gitee.com/uploads/images/2020/0523/144038_527ce836_5550632.png" alt=""></p>
+<p><img src="https://images.gitee.com/uploads/images/2020/0523/144113_1a9eeed8_5550632.png" alt=""></p>
+<p>以上所有<strong>$\color{red}{红色加粗}$</strong>的字都是满足最小支持度阈值的频繁项集，有些细心的人可能会发现了，为什么在3项集的时候，我没有把所有情况都列举出来呢？因为我知道，其它的情况一定不是频繁项集，原因就是<strong>闭项集</strong>。</p>
+<h3 id="2-3-闭频繁项集和极大的频繁项集"><a href="#2-3-闭频繁项集和极大的频繁项集" class="headerlink" title="2.3 闭频繁项集和极大的频繁项集"></a>2.3 闭频繁项集和极大的频繁项集</h3><p><strong>一个项集如果是频繁的，那它任意子集也一定是频繁的</strong>，<strong>一个项集如果是非频繁的，那么由它所形成的父集也是非频繁的</strong>。</p>
+<p>这句话不难理解，如果买{面包，牛奶，香肠}，是一个频繁项集，那么选择{面包，牛奶}的这个2项集也一定是一个频繁项集。用概率的形式来解释吧。<br>$$<br>假设：买面包，牛奶，火腿的概率和支持度s分别为\<br>p_1,p_2,p_3,\alpha \<br>前提：p_1<em>p_2</em>p_3 &gt;= \alpha \quad (0&lt; p_i&lt; 1) \quad p_i = (1,2,3)\<br>结论：小数乘法越乘越小，项数越少，概率越大<br>$$<br>闭频繁项集指的就是，对于一个项集 X ，你找的包含 X 的父集 Y ，只要 X , Y 的支持度不一样,你就可以说X是<strong>闭频繁项集</strong>。<strong>极大频繁项集就算具有项数最多的频繁项集(可能不止一个)</strong>。</p>
+<h3 id="2-4-通过频繁项集如何推荐"><a href="#2-4-通过频繁项集如何推荐" class="headerlink" title="2.4 通过频繁项集如何推荐"></a>2.4 通过频繁项集如何推荐</h3><h2 id="Part-3-Apriori-算法"><a href="#Part-3-Apriori-算法" class="headerlink" title="Part 3 Apriori 算法"></a>Part 3 Apriori 算法</h2><h3 id="3-1-算法思路"><a href="#3-1-算法思路" class="headerlink" title="3.1 算法思路"></a>3.1 算法思路</h3><p>Apriori算法的核心指导思想从它的名字中就能体现出来了，<strong>先验性算法</strong>，<strong>先验性质</strong>，其实我们之前就已经说过了，这里再明确严谨地定义一下。</p>
+<p><strong>先验性质(Apriori property)</strong>：<strong><em>频繁项集的所有非空子集也一定是频繁的</em></strong></p>
+<h3 id="3-2-算法过程"><a href="#3-2-算法过程" class="headerlink" title="3.2 算法过程"></a>3.2 算法过程</h3><h4 id="3-2-1-算法宏观描述"><a href="#3-2-1-算法宏观描述" class="headerlink" title="3.2.1 算法宏观描述"></a>3.2.1 算法宏观描述</h4><p>由于是先验性的，所有我们会<strong>先收集满足最小支持度阈值的频繁1项集</strong>。记该集合为 <strong>L1</strong>。然后使用 L1 找出频繁 2 项集 L2，使用 L2找出L3，以此类推，直到找不出频繁k项集为止。由此可知，每找一次Lk都需要完整地扫描一遍数据库，此时我们为了提高算法效率，要使用之前所说的<strong>先验性质</strong>。</p>
+<h4 id="3-2-2-算法具体拆分"><a href="#3-2-2-算法具体拆分" class="headerlink" title="3.2.2 算法具体拆分"></a>3.2.2 算法具体拆分</h4>
+      
+
+
+        <!-- 《添加版权声明 -->
+        
+            <!-- 《添加版权声明 -->
+<!--添加版权声明https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3-->
+
+
+<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明 -->
+
+  <div class="declare">
+    <strong class="author">本文作者：</strong>
+    
+      甯宓
+    
+    <br>
+    <strong class="create-time">发布时间：</strong>
+    2020-05-23
+    <br>
+    <strong class="update-time">最后更新：</strong>
+    2020-05-23
+    <br>
+    <strong class="article-titles">本文标题：</strong>
+    <a href="http://yoursite.com/2020/05/23/关联规则/" title="关联规则" target="_blank">关联规则</a>
+    <br>
+    <strong class="article-url">本文链接：</strong>
+    <a href="http://yoursite.com/2020/05/23/关联规则/" title="关联规则" target="_blank">http://yoursite.com/2020/05/23/关联规则/</a>
+    <br>
+    <strong class="copyright">版权声明：</strong>
+    本作品采用
+    <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议">CC BY-NC-SA 4.0</a>
+    许可协议进行许可。转载请注明出处！
+    
+      <br>
+      <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"/></a>
+    
+  </div>
+
+
+        
+        <!-- 添加版权声明》 -->
+
+
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我喝咖啡<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/WechatPay.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -201,7 +341,7 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -214,523 +354,104 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/05/23/%E5%85%B3%E8%81%94%E8%A7%84%E5%88%99/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/20/%E8%BF%9E%E7%BB%AD%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%A4%A7%E5%92%8C/" class="archive-article-date">
-  	<time datetime="2020-05-20T08:53:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-20</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/05/20/%E8%BF%9E%E7%BB%AD%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%A4%A7%E5%92%8C/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">连续子数组的最大和</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/20/%E8%BF%9E%E7%BB%AD%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%A4%A7%E5%92%8C/">连续子数组的最大和</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">动态规划</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/计算机基础//" class="article-tag-list-link color1">计算机基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/12/%E5%AD%97%E6%AF%8D%E5%A4%A7%E5%B0%8F%E5%86%99%E5%85%A8%E6%8E%92%E5%88%97/" class="archive-article-date">
-  	<time datetime="2020-05-12T12:14:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/12/%E5%AD%97%E6%AF%8D%E5%A4%A7%E5%B0%8F%E5%86%99%E5%85%A8%E6%8E%92%E5%88%97/">字母大小写全排列</a>
-    </h1>
+
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">回溯</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/计算机基础//" class="article-tag-list-link color1">计算机基础</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/计算机基础/算法//" class="article-tag-list-link color3">算法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/计算机基础/算法/回溯//" class="article-tag-list-link color3">回溯</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/22/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/" class="archive-article-date">
-  	<time datetime="2020-04-22T07:10:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/22/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/">滑动窗口</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/算法//" class="article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/06/%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB/" class="archive-article-date">
-  	<time datetime="2020-04-06T07:33:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/06/%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB/">编辑距离</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">动态规划</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/计算机基础//" class="article-tag-list-link color1">计算机基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/01/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" class="archive-article-date">
-  	<time datetime="2020-04-01T07:15:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/01/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/">快速排序</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">排序</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/计算机基础//" class="article-tag-list-link color1">计算机基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/15/%E5%B2%9B%E5%B1%BF%E7%9A%84%E6%9C%80%E5%A4%A7%E9%9D%A2%E7%A7%AF/" class="archive-article-date">
-  	<time datetime="2020-03-15T07:57:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/15/%E5%B2%9B%E5%B1%BF%E7%9A%84%E6%9C%80%E5%A4%A7%E9%9D%A2%E7%A7%AF/">岛屿的最大面积</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">深度优先</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">广度优先</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/计算机基础//" class="article-tag-list-link color1">计算机基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/21/%E7%94%A8%E6%88%B7%E5%88%86%E7%BB%84/" class="archive-article-date">
-  	<time datetime="2020-02-21T06:34:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/21/%E7%94%A8%E6%88%B7%E5%88%86%E7%BB%84/">用户分组</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">贪心算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/计算机基础//" class="article-tag-list-link color1">计算机基础</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/计算机基础/算法//" class="article-tag-list-link color3">算法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/计算机基础/算法/贪心算法//" class="article-tag-list-link color5">贪心算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/19/%E8%AF%95%E9%A2%98-%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83-%E6%89%BE%E9%9B%B6%E9%92%B1/" class="archive-article-date">
-  	<time datetime="2020-02-19T08:41:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/19/%E8%AF%95%E9%A2%98-%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83-%E6%89%BE%E9%9B%B6%E9%92%B1/">试题 算法训练 找零钱</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">贪心算法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">竞赛</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/计算机基础//" class="article-tag-list-link color1">计算机基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/13/%E5%88%86%E5%8F%91%E9%A5%BC%E5%B9%B2/" class="archive-article-date">
-  	<time datetime="2020-02-13T07:40:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/13/%E5%88%86%E5%8F%91%E9%A5%BC%E5%B9%B2/">分发饼干</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">贪心算法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">竞赛</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/计算机基础//" class="article-tag-list-link color1">计算机基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/tags/%E7%AE%97%E6%B3%95/page/2/">2</a><a class="extend next" rel="next" href="/tags/%E7%AE%97%E6%B3%95/page/2/">Next &amp;raquo;</a>
-    </nav>
-  
-
 
 
           </div>
@@ -781,9 +502,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
