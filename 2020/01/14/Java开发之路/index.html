@@ -55,7 +55,7 @@
 <meta property="og:image" content="https://images.gitee.com/uploads/images/2020/0513/141050_f959291e_5550632.png">
 <meta property="og:image" content="https://images.gitee.com/uploads/images/2020/0513/141110_b6671cb3_5550632.png">
 <meta property="article:published_time" content="2020-01-14T10:15:37.000Z">
-<meta property="article:modified_time" content="2020-05-25T11:00:13.891Z">
+<meta property="article:modified_time" content="2020-05-27T12:00:48.734Z">
 <meta property="article:author" content="甯宓">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
@@ -222,7 +222,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">15,381字</span>
+        <span class="post-count">15,492字</span>
       </span>
     </span>
 
@@ -794,7 +794,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> test3;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Man</span> <span class="keyword">extends</span> <span class="title">Human</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		Human m1 = <span class="keyword">new</span> Man();<span class="comment">//当对象本身就是来源子类时</span></span><br><span class="line">		Man m2 = (Man) m1;<span class="comment">//可以将父类转成子类</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://images.gitee.com/uploads/images/2020/0525/163454_a759a084_5550632.png" alt=""></p>
-<h5 id="3-6-2-多态"><a href="#3-6-2-多态" class="headerlink" title="3.6.2 多态"></a>3.6.2 多态</h5><p>多态：==字面理解就是,”多种状态”==，这多种状态怎么体现出来的呢？第一个就是我们最熟悉地<strong>函数重写了</strong>，当不同子类继承父类的时候，父类方法会被重写，这就导致了，一个函数有两种状态。</p>
+<h5 id="3-6-2-多态"><a href="#3-6-2-多态" class="headerlink" title="3.6.2 多态"></a>3.6.2 多态</h5><p>多态：$\color{red}{字面理解就是,”多种状态”}$，这多种状态怎么体现出来的呢？第一个就是我们最熟悉地<strong>函数重写了</strong>，当不同子类继承父类的时候，父类方法会被重写，这就导致了，一个函数有两种状态。</p>
 <p>类型转换，带来的结果也是多态。它意味着，一个抽象类或一个接口，会有多种实现。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> test3;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Human</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"I can eat"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Man</span> <span class="keyword">extends</span> <span class="title">Human</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">hunt</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"I can hunt"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span><span class="comment">//Man继承Human，Man类重写了Human中的eat()方法</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"I can eat more!"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		Man obj1 = <span class="keyword">new</span> Man();<span class="comment">//实例化Man对象obj1</span></span><br><span class="line">		obj1.eat();</span><br><span class="line">		Human obj2 = (Human) obj1;<span class="comment">//转型为Human</span></span><br><span class="line">		obj2.eat();</span><br><span class="line">		Man obj3 = (Man) obj2;</span><br><span class="line">		obj3.eat();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -1002,7 +1002,7 @@
 
 
 
-<h4 id="关键字package，import和classpath"><a href="#关键字package，import和classpath" class="headerlink" title="关键字package，import和classpath"></a>关键字package，import和classpath</h4><p>&emsp;之前的Java类都是放在同一目录下的，类之间的相互调用关系无需<strong>显式声明调用</strong>。</p>
+<h2 id="Part-6-包"><a href="#Part-6-包" class="headerlink" title="Part 6 包"></a>Part 6 包</h2><h3 id="6-1-关键字package，import和classpath"><a href="#6-1-关键字package，import和classpath" class="headerlink" title="6.1 关键字package，import和classpath"></a>6.1 关键字package，import和classpath</h3><p>&emsp;之前的Java类都是放在同一目录下的，类之间的相互调用关系无需<strong>显式声明调用</strong>。</p>
 <p>当程序规模变大时，可能出现的情况：</p>
 <ol>
 <li>同一目录下，可能会有有同名文件</li>
@@ -1037,6 +1037,16 @@
 
 <h5 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h5><p>package用来区分class，但是必须和目录层次一致。</p>
 <p>import用来导入类，尽量精准地导入。</p>
+<h3 id="6-2-JFC（Java-Foundation-Classes）类库"><a href="#6-2-JFC（Java-Foundation-Classes）类库" class="headerlink" title="6.2  JFC（Java Foundation Classes）类库"></a>6.2  JFC（Java Foundation Classes）类库</h3><p>JFC，又称 Java 基础开发类库，里面包含了一些Java基本类，比如：</p>
+<blockquote>
+<p>java.lang:包含System，String，异常处理Exception，线程控制</p>
+<p>java.io:Java的标准输入输出类库</p>
+<p>java.util:Java的实用工具类库，Date,Calender，Queue，Random等</p>
+<p>java.lang.reflect</p>
+<p>java.net：网络编程</p>
+<p>java.awt：构建GUI</p>
+<p>java.sql：提供访问处理数据库中数据的接口</p>
+</blockquote>
 <h5 id="classpath"><a href="#classpath" class="headerlink" title="classpath"></a>classpath</h5><h6 id="jar机制"><a href="#jar机制" class="headerlink" title="jar机制"></a>jar机制</h6><p>&emsp; jar文件，就是一种扩展名叫做jar的文件，是Java所特有的一种文件格式，<strong>用于可执行程序文件的传播</strong>。</p>
 <p>本质上，jar文件就是一组class文件的压缩包【不知道.class 文件是什么的请翻倒文章开头】。和</p>
 <p>C++的dll文件一样。</p>
