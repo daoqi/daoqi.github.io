@@ -54,8 +54,13 @@
 <meta property="og:image" content="https://images.gitee.com/uploads/images/2020/0513/140935_59ae8fed_5550632.png">
 <meta property="og:image" content="https://images.gitee.com/uploads/images/2020/0513/141050_f959291e_5550632.png">
 <meta property="og:image" content="https://images.gitee.com/uploads/images/2020/0513/141110_b6671cb3_5550632.png">
+<meta property="og:image" content="https://images.gitee.com/uploads/images/2020/0601/174711_c0a70308_5550632.png">
+<meta property="og:image" content="https://images.gitee.com/uploads/images/2020/0601/175221_bfae2454_5550632.png">
+<meta property="og:image" content="https://images.gitee.com/uploads/images/2020/0601/180618_13ef1524_5550632.png">
+<meta property="og:image" content="https://images.gitee.com/uploads/images/2020/0601/181206_ab425c2c_5550632.png">
+<meta property="og:image" content="https://images.gitee.com/uploads/images/2020/0601/181407_9fb1ee27_5550632.png">
 <meta property="article:published_time" content="2020-01-14T10:15:37.000Z">
-<meta property="article:modified_time" content="2020-05-27T12:00:48.734Z">
+<meta property="article:modified_time" content="2020-06-08T10:54:47.807Z">
 <meta property="article:author" content="甯宓">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
@@ -222,7 +227,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">15,492字</span>
+        <span class="post-count">16,205字</span>
       </span>
     </span>
 
@@ -231,7 +236,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text">  阅读时长≈ </span>
-        <span class="post-count">67分</span>
+        <span class="post-count">70分</span>
       </span>
     </span>
 </div>
@@ -1059,6 +1064,54 @@
 </ol>
 <p><strong>使用Eclipse的Export功能导出一个jar</strong></p>
 <p>选中项目-&gt;顶部菜单File-&gt;Export-&gt;找到 Java下的 JAR file-&gt;勾选要导出的类，在下方写上路径-&gt;finish即可。</p>
+<h2 id="Part-7-异常处理"><a href="#Part-7-异常处理" class="headerlink" title="Part 7 异常处理"></a>Part 7 异常处理</h2><p>程序运行过程中一定会产生异常，它们大致可以分为以下3类：</p>
+<p><img src="https://images.gitee.com/uploads/images/2020/0601/174711_c0a70308_5550632.png" alt=""></p>
+<p>Java提供了一套异常处理机制可以捕获这些异常，按异常被发现的场所，我们分为：</p>
+<blockquote>
+<ol>
+<li>编译时异常：文件不存在……</li>
+<li>运行时异常：数组越界，除以0……</li>
+</ol>
+</blockquote>
+<p>Java所有的异常类都是<strong>java.lang.Throwable</strong>的子类，由它派生出两大异常类：</p>
+<blockquote>
+<ol>
+<li>由于系统发生严重错误的Error类</li>
+<li>程序运行过程中的Exception类</li>
+</ol>
+</blockquote>
+<p><img src="https://images.gitee.com/uploads/images/2020/0601/175221_bfae2454_5550632.png" alt=""></p>
+<h3 id="7-1-try-catch-finally-语句捕捉异常"><a href="#7-1-try-catch-finally-语句捕捉异常" class="headerlink" title="7.1 try/catch/finally 语句捕捉异常"></a>7.1 try/catch/finally 语句捕捉异常</h3><p>语法格式如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    <span class="comment">//语句段</span></span><br><span class="line">&#125;<span class="keyword">catch</span>(异常类A对象 a)&#123;</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">&#125;<span class="keyword">catch</span>(异常类B对象 b)&#123;</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">&#125;<span class="keyword">catch</span>(异常类C对象 c)&#123;</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">&#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">    <span class="comment">//永远会执行，无论有无异常，通常用来释放系统资源</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://images.gitee.com/uploads/images/2020/0601/180618_13ef1524_5550632.png" alt=""></p>
+<p>利用多态性，我们可以只使用Exception，Error两个异常类，然后通过下列语句进行详细查看：</p>
+<p><img src="https://images.gitee.com/uploads/images/2020/0601/181206_ab425c2c_5550632.png" alt=""></p>
+<h3 id="7-2-异常处理使用原则"><a href="#7-2-异常处理使用原则" class="headerlink" title="7.2 异常处理使用原则"></a>7.2 异常处理使用原则</h3><p><img src="https://images.gitee.com/uploads/images/2020/0601/181407_9fb1ee27_5550632.png" alt="输入图片说明"></p>
+<h3 id="7-3-throws-关键字"><a href="#7-3-throws-关键字" class="headerlink" title="7.3 throws 关键字"></a>7.3 throws 关键字</h3><p>我们如果不知道如何处理一个方法的异常时，我们可以throws(抛出) 异常。</p>
+<p>语法格式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[修饰符] 返回类型 方法名(参数列表) <span class="keyword">throws</span> 异常类A[B,C,...&#123;</span><br><span class="line">	方法体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意：</p>
+<ol>
+<li>throws只是抛出异常不处理，我们一定要让它的调用者try…catch来处理这个异常或者让它调用者接着throws,直到有人处理为止。</li>
+<li>main 方法是整个程序的入口，它不可以抛出异常。</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">A</span><span class="params">()</span> <span class="keyword">throws</span> SQLException</span>&#123;</span><br><span class="line">		</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">B</span><span class="params">()</span> <span class="keyword">throws</span> SQLException</span>&#123;</span><br><span class="line">		A();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">C</span><span class="params">()</span> <span class="keyword">throws</span> SQLException</span>&#123;</span><br><span class="line">		B();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">        <span class="keyword">try</span>&#123;</span><br><span class="line">			C();</span><br><span class="line">        &#125;<span class="keyword">catch</span>(SQLException e)&#123;</span><br><span class="line">		</span><br><span class="line">        &#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="7-4-自定义异常"><a href="#7-4-自定义异常" class="headerlink" title="7.4 自定义异常"></a>7.4 自定义异常</h4><p>自定义异常类是Exception或RuntimeException的子类，它的固定写法是：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> ... <span class="keyword">extends</span> <span class="title">Exception</span></span>&#123;</span><br><span class="line">	<span class="keyword">public</span> ...()&#123;&#125;<span class="comment">//空构造方法</span></span><br><span class="line">	<span class="keyword">public</span> ...(String msg)&#123;</span><br><span class="line">		<span class="keyword">super</span>(msg);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后通过关键字<strong>throw</strong>抛出。</p>
+<p>注意：</p>
+<blockquote>
+<p>throw 只负责抛出异常，$\color{red}{它必须和try…catch…finally配套使用或者throws连着一起用}$</p>
+</blockquote>
+<h5 id="7-4-1-关键字throws和throw的区别："><a href="#7-4-1-关键字throws和throw的区别：" class="headerlink" title="7.4.1 关键字throws和throw的区别："></a>7.4.1 关键字<strong>throws</strong>和<strong>throw</strong>的区别：</h5><ol>
+<li>throws出现在方法<strong>函数头</strong>，而throw出现在<strong>函数体</strong>。</li>
+<li>throws表示<strong>出现异常的一种可能性</strong>，并不一定会发生这些异常。throw则是抛出了异常，执行throw则<strong>一定抛出了某种异常对象</strong>。</li>
+<li>两者都是消极处理异常的方式（这里的消极并不是说这种方式不好），只是抛出或者可能抛出异常，但是不会由函数去处理异常，真正的处理异常由函数的上层调用处理。换句话说：它们都是那种只抛不管的，所以父调用者才要写try…catch语句来接收处理异常。</li>
+</ol>
 
       
 
